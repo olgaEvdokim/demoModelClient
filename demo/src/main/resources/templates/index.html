@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+<h2>Input your information</h2>
+
+<form th:method="POST" th:action="@{/payment-request}" th:object="${payloadDto}">
+    <label for="name">Creditor Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="iban">Creditor IBAN</label><br>
+    <input type="text" id="iban" name="iban"><br>
+    <label for="amount">Amount:</label><br>
+    <input type="text" id="amount" name="amount"><br>
+    <label for="currency">Currency:</label><br>
+    <input type="text" id="currency" name="currency"><br>
+    <label for="remittanceInformation">Remittance Information</label><br>
+    <input type="text" id="remittanceInformation" name="remittanceInformation"><br>
+    <label for="numberOfTransactions">Number Of Transactions</label><br>
+    <input type="text" id="numberOfTransactions" name="numberOfTransactions"><br>
+    <label for="paymentInformationId">Payment Information id</label><br>
+    <input type="text" id="paymentInformationId" name="paymentInformationId"><br>
+    <label for="localInstrument">Local Instrument</label><br>
+    <input type="text" id="localInstrument" name="localInstrument"><br>
+    <label for="categoryPurpose">Purpose</label><br>
+    <input type="text" id="categoryPurpose" name="categoryPurpose"><br>
+    <label for="serviceLevel">Service Level</label><br>
+    <input type="text" id="serviceLevel" name="serviceLevel"><br>
+    <input type="hidden" th:field="*{accessToken}" th:value="${token}" name="accessToken">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
